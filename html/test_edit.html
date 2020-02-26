@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Microposts</title>
+    <!-- %= csrf_meta_tags % -->
+    <!-- %= csp_meta_tag % -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+    <!-- %= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' % -->
+    <!-- %= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' % -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+
+  </head>
+
+  <body>
+    <!-- ↓ヘッダー -->
+    <header class="mb-4">
+      <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="/">中学受験 成績管理アプリ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- メニュー項目 -->
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav">
+            <!--% if logged_in? %-->
+              <li class="nav-item"><a class="nav-link href="">新規テスト登録</a></li>
+              <li class="nav-item"><a class="nav-link href="">マイページ・目標設定</a></li>
+              <li class="nav-item"><a class="nav-link href="">ログアウト</a></li>
+            <!--% else %>
+              <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
+            <% end %-->
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- ↑ヘッダー -->
+
+    <div>
+      〇〇<!-- %= current_user.name %-->さんの成績
+    </div>
+
+    <h1 class="h6 mt-3">テスト詳細</h1>
+    <div class="form-group row">
+      <div class="col-3"><input type="number" class="form-control" name="yearmonth"></div>
+      <div class="col-2"><input type="number" class="form-control" name="week"></div>
+      <div class="col-3">週分　　テキストNo：</div>
+      <div class="col-2"><input type="text" class="form-control" name="text_no"></div>
+    </div>
+    
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">科目</th>
+          <th scope="col">テーマ</th>
+          <th scope="col">点数</th>
+          <th scope="col">メモ</th>
+          <th scope="col">復習チェック</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-danger">
+          <td>国語</td>
+          <td><div class="col-xs-4"><input type="text" class="form-control" name="japanese_theme" placeholder="学習のテーマ名"></div></td>
+          <td><div class="col-xs-2"><input type="number" class="form-control" name="japanese_score" placeholder="100"></div></td>
+          <td><div class="col-xs-4"><input type="text" class="form-control" name="japanese_memo" placeholder="苦手分野やできたところ"></div></td>
+          <td><div form-check"><input type="checkbox" class="custom-control-input" id="japanese_review"></div></td>
+        </tr>
+        <tr class="table-success">
+          <td scope="col">算数</td>
+          <td>60</td>
+          <td>70</td>
+          <td>80</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td scope="col">理科</td>
+          <td>60</td>
+          <td>70</td>
+          <td>80</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td scope="col">社会</td>
+          <td>60</td>
+          <td>70</td>
+          <td>80</td>
+          <td>70</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <!-- ページング-->
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <!-- footer -->
+    <footer>
+      <hr class="mt-0 mb-0">
+      <p class="text-center mt-0"><small>&copy;saeko.kamata  all rights reserved.</small></p>
+    </footer>
+  </body>
+</html>
