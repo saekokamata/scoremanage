@@ -1,0 +1,23 @@
+    <!-- ↓ヘッダー -->
+    <header class="mb-4">
+      <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="/">中学受験 成績管理アプリ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- メニュー項目 -->
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav">
+            <!--% if logged_in? %-->
+              <li class="nav-item"><a class="nav-link href="">新規テスト登録</a></li>
+              <li class="nav-item"><a class="nav-link href="">マイページ・目標設定</a></li>
+              <li class="nav-item"><a class="nav-link href="">ログアウト</a></li>
+            <!--% else %>
+              <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
+              <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
+            <% end %-->
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- ↑ヘッダー -->

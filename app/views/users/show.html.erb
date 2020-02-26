@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-sm-8 offset-sm-2">
+    
+    <div class="offset-sm-1 col-sm-11"><h4>マイページ</h4></div>
+
+      <div class="offset-sm-1 col-sm-11">
+        <div class="font-weight-bold p-2 mb-2 bg-light text-dark">お客様情報</div>
+        
+        <div class="form-group row">
+          <div class="offset-sm-1 col-sm-3">お名前</div>
+          <div class="col-sm-8"><%= @user.parent_name %></div>
+        </div>    
+
+        <div class="form-group row">
+          <div class="offset-sm-1 col-sm-3">email</div>
+          <div class="col-sm-8"><%= @user.email %></div>
+        </div> 
+        
+        <div class="form-group row">
+          <div class="offset-sm-1 col-sm-3">パスワード</div>
+          <div class="col-sm-8">*****</div>
+        </div> 
+
+      </div>     
+ 
+      <div class="offset-sm-1 col-sm-11">
+        <div class="font-weight-bold p-2 mb-2 bg-light text-dark">お子様の情報</div>
+        
+        <div class="form-group row">
+          <div class="offset-sm-1 col-sm-3">お子様のお名前</div>
+          <div class="col-sm-8"><%= @user.child_name %></div>
+        </div>    
+
+        <div class="form-group row">
+          <div class="offset-sm-1 col-sm-3">合格点</div>
+          <div class="col-sm-5"><%= @user.passing_score %></div>
+          <div class="col-sm-3">点</div>
+        </div> 
+
+        <div class="form-group row">
+          <div class="offset-sm-1 col-sm-3">アラート点</div>
+          <div class="col-sm-5"><%= @user.failing_score %></div>
+          <div class="col-sm-3">点</div>
+        </div> 
+        
+      </div>     
+
+       <div class="col-sm-8 offset-sm-2">
+        <%= link_to '変更する', edit_user_path(@user), class: 'btn btn-primary btn-block' %>
+      </div>   
+
+    </div>
+  </div>
+</div>

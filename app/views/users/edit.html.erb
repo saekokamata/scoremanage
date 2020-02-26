@@ -1,0 +1,62 @@
+
+<div class="row">
+  <div class="col-sm-8 offset-sm-2">
+    
+    <div class="offset-sm-1 col-sm-11"><h4>マイページ</h4></div>
+
+      <%= form_with(model: @user, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+  
+      <div class="offset-sm-1 col-sm-11">
+        <div class="font-weight-bold p-2 mb-2 bg-light text-dark">お客様情報</div>
+        
+        <div class="form-group row">
+          <%= f.label :parent_name, 'お名前', class:'offset-sm-1 col-sm-3' %>
+          <div class="col-sm-8"><%= f.text_field :parent_name, class: 'form-control' %></div>
+        </div>    
+
+        <div class="form-group row">
+          <%= f.label :email, 'email', class:'offset-sm-1 col-sm-3' %>
+          <div class="col-sm-8"><%= f.email_field :email, class: 'form-control' %></div>
+        </div> 
+        
+        <div class="form-group row">
+          <%= f.label :password, 'パスワード', class:'offset-sm-1 col-sm-3' %>
+          <div class="col-sm-8"><%= f.password_field :password, class: 'form-control' %></div>
+        </div> 
+
+        <div class="form-group row">
+          <%= f.label :password_confirmation, 'パスワード確認', class:'offset-sm-1 col-sm-3' %>
+          <div class="col-sm-8"><%= f.password_field :password_confirmation, class: 'form-control' %></div>
+        </div> 
+      </div>     
+ 
+    
+      <div class="offset-sm-1 col-sm-11">
+        <div class="font-weight-bold p-2 mb-2 bg-light text-dark">お子様の情報</div>
+        
+        <div class="form-group row">
+          <%= f.label :child_name, 'お子様のお名前', class:'offset-sm-1 col-sm-3' %>
+          <div class="col-sm-8"><%= f.text_field :child_name, class: 'form-control' %></div>
+        </div>    
+
+        <div class="form-group row">
+          <%= f.label :passing_score, '合格点', class:'offset-sm-1 col-sm-3' %>
+          <div class="col-sm-5"><%= f.text_field :passing_score, class: 'form-control' %></div>
+          <div class="col-sm-3">点</div>
+        </div> 
+        
+        <div class="form-group row">
+          <%= f.label :failing_score, 'アラート点  ', class:'offset-sm-1 col-sm-3' %>
+          <div class="col-sm-5"><%= f.text_field :failing_score, class: 'form-control' %></div>
+          <div class="col-sm-3">点</div>
+        </div> 
+      </div>     
+ 
+      <div class="col-sm-8 offset-sm-2">
+        <%= f.submit '更新', class: 'btn btn-primary btn-block' %>
+      </div>
+      
+    <% end %>
+  </div>
+</div>
