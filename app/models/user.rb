@@ -8,4 +8,7 @@ class User < ApplicationRecord
   validates :passing_score,presence: true, length: { maximum: 3 }
   validates :failing_score,presence: true, length: { maximum: 3 }
   has_secure_password
+  
+  has_many :tests
+  
 end

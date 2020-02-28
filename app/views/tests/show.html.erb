@@ -1,0 +1,52 @@
+    <div>
+      <!--%= current_user.name %-->さんの成績
+    </div>
+
+    <h1 class="h6 mt-3">テスト詳細</h1>
+    <h2 class="h5"><%= @test.year_month %> <%= @test.week %> 週分　テキストNo：<%= @test.text_no %> </h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">科目</th>
+          <th scope="col">テーマ</th>
+          <th scope="col">点数</th>
+          <th scope="col">メモ</th>
+          <th scope="col">復習チェック</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-danger">
+          <td scope="col">国語</td>
+          <td><%= @test.japanese_theme %></td>
+          <td><%= @test.japanese_score %></td>
+          <td><%= @test.japanese_memo %></td>
+          <td><%= @test.japanese_review %></td>
+        </tr>
+        <tr class="table-success">
+          <td scope="col">算数</td>
+          <td><%= @test.math_theme %></td>
+          <td><%= @test.math_score %></td>
+          <td><%= @test.math_memo %></td>
+          <td><%= @test.math_review %></td>
+        </tr>
+        <tr>
+          <td scope="col">理科</td>
+          <td><%= @test.science_theme %></td>
+          <td><%= @test.science_score %></td>
+          <td><%= @test.science_memo %></td>
+          <td><%= @test.science_review %></td>
+        </tr>
+        <tr>
+          <td scope="col">社会</td>
+          <td><%= @test.social_theme %></td>
+          <td><%= @test.social_score %></td>
+          <td><%= @test.social_memo %></td>
+          <td><%= @test.social_review %></td>
+        </tr>
+      </tbody>
+    </table>
+    
+      <div class="col-sm-8 offset-sm-2">
+        <%= link_to '変更する', edit_test_path(@test), class: 'btn btn-primary btn-block' %>
+      </div>
+      
