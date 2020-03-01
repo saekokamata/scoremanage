@@ -13,12 +13,41 @@
       <% tests.each do |test| %>
       <tbody>
         <tr>
-          <td><%= "#{test.year_month.strftime("%y年%m月")}" + "#{test.week}週" %></td>
-          <td><%= test.japanese_score %></td>
-          <td><%= test.math_score %></td>
-          <td><%= test.science_score %></td>
-          <td><%= test.social_score %></td>
-          <td><%= test.inspect %></td>
+          <td><%= link_to "#{test.year_month.strftime("%y年%m月")}" + "#{test.week}週", test %></td>
+
+          <% if test.japanese_score <= current_user.failing_score %>
+              <td class="table-danger"><%= test.japanese_score %></td>
+            <% elsif test.japanese_score >= current_user.passing_score %>
+              <td class="table-success"><%= test.japanese_score %></td>
+            <% else %>
+              <td><%= test.japanese_score %></td>
+          <% end %>
+          
+          <% if test.math_score <= current_user.failing_score %>
+              <td class="table-danger"><%= test.math_score %></td>
+            <% elsif test.math_score >= current_user.passing_score %>
+              <td class="table-success"><%= test.math_score %></td>
+            <% else %>
+              <td><%= test.math_score %></td>
+          <% end %>
+          
+           <% if test.science_score <= current_user.failing_score %>
+              <td class="table-danger"><%= test.science_score %></td>
+            <% elsif test.science_score >= current_user.passing_score %>
+              <td class="table-success"><%= test.science_score %></td>
+            <% else %>
+              <td><%= test.science_score %></td>
+          <% end %>
+          
+          <% if test.social_score <= current_user.failing_score %>
+              <td class="table-danger"><%= test.social_score %></td>
+            <% elsif test.social_score >= current_user.passing_score %>
+              <td class="table-success"><%= test.social_score %></td>
+            <% else %>
+              <td><%= test.social_score %></td>
+          <% end %>
+          
+          <td><%= (test.japanese_score + test.math_score + test.science_score + test.social_score)/4 %></td>
         </tr>
       </tbody>
       <% end %>

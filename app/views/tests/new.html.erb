@@ -7,10 +7,10 @@
       <%= render 'layouts/error_messages', model: f.object %>
 
         <div class="form-group row">
-          <div class="col-3"><%= f.text_field :year_month, class: 'form-control' %></div>
-          <div class="col-2"><%= f.text_field :week, class: 'form-control' %></div>
+          <div class="col-3"><%= f.text_field :year_month, class: 'form-control', placeholder: "20191231" %></div>
+          <div class="col-2"><%= f.text_field :week, class: 'form-control', placeholder: "1" %></div>
           <div class="col-3">週分　　テキストNo：</div>
-          <div class="col-2"><%= f.text_field :text_no, class: 'form-control' %></div>
+          <div class="col-2"><%= f.text_field :text_no, class: 'form-control', placeholder: "N-01"  %></div>
         </div>
         
         <table class="table table-bordered">
@@ -27,28 +27,28 @@
             <tr class="table-danger">
               <td>国語</td>
               <td><div class="col-xs-4"><%= f.text_field :japanese_theme, class: 'form-control' %></div></td>
-              <td><div class="col-xs-2"><%= f.text_field :japanese_score, class: 'form-control' %></div></td>
+              <td><div class="col-xs-2"><%= f.text_field :japanese_score, class: 'form-control', placeholder: "80" %></div></td>
               <td><div class="col-xs-4"><%= f.text_field :japanese_memo, class: 'form-control' %></div></td>
               <td><div class="col-xs-2"><%= f.check_box :japanese_review, {} , "true", "false" %></div></td>
             </tr>
             <tr class="table-success">
               <td scope="col">算数</td>
               <td><div class="col-xs-4"><%= f.text_field :math_theme, class: 'form-control' %></div></td>
-              <td><div class="col-xs-2"><%= f.text_field :math_score, class: 'form-control' %></div></td>
+              <td><div class="col-xs-2"><%= f.text_field :math_score, class: 'form-control', placeholder: "80" %></div></td>
               <td><div class="col-xs-4"><%= f.text_field :math_memo, class: 'form-control' %></div></td>
               <td><div class="col-xs-2"><%= f.check_box :math_review, {} , "true", "false" %></div></td>
             </tr>
             <tr>
               <td scope="col">理科</td>
               <td><div class="col-xs-4"><%= f.text_field :science_theme, class: 'form-control' %></div></td>
-              <td><div class="col-xs-2"><%= f.text_field :science_score, class: 'form-control' %></div></td>
+              <td><div class="col-xs-2"><%= f.text_field :science_score, class: 'form-control', placeholder: "80" %></div></td>
               <td><div class="col-xs-4"><%= f.text_field :science_memo, class: 'form-control' %></div></td>
               <td><div class="col-xs-2"><%= f.check_box :science_review, {} , "true", "false" %></div></td>
             </tr>
             <tr>
               <td scope="col">社会</td>
               <td><div class="col-xs-4"><%= f.text_field :social_theme, class: 'form-control' %></div></td>
-              <td><div class="col-xs-2"><%= f.text_field :social_score, class: 'form-control' %></div></td>
+              <td><div class="col-xs-2"><%= f.text_field :social_score, class: 'form-control', placeholder: "80" %></div></td>
               <td><div class="col-xs-4"><%= f.text_field :social_memo, class: 'form-control' %></div></td>
               <td><div class="col-xs-2"><%= f.check_box :social_review, {} , "true", "false" %></div></td>
             </tr>

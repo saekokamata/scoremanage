@@ -1,9 +1,9 @@
     <div>
-      <!--%= current_user.name %-->さんの成績
+      <%= current_user.child_name %>さんの成績
     </div>
 
     <h1 class="h6 mt-3">テスト詳細</h1>
-    <h2 class="h5"><%= @test.year_month %> <%= @test.week %> 週分　テキストNo：<%= @test.text_no %> </h2>
+    <h2 class="h5"><%= @test.year_month.strftime("%y年%m月") %> <%= @test.week %> 週分　テキストNo：<%= @test.text_no %> </h2>
     <table class="table table-bordered">
       <thead>
         <tr>

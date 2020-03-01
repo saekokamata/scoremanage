@@ -1,5 +1,5 @@
    <div>
-      <!--%= current_user.name %-->さんの成績
+      <%= current_user.child_name %>さんの成績
     </div>
 
     <h1 class="h6 mt-3">テスト詳細edit</h1>
@@ -7,10 +7,10 @@
       <%= render 'layouts/error_messages', model: f.object %>
 
         <div class="form-group row">
-          <div class="col-3"><%= f.text_field :year_month, class: 'form-control' %></div>
-          <div class="col-2"><%= f.text_field :week, class: 'form-control' %></div>
+          <div class="col-3"><%= f.text_field :year_month, class: 'form-control', placeholder: "20191231" %></div>
+          <div class="col-2"><%= f.text_field :week, class: 'form-control', placeholder: "1" %></div>
           <div class="col-3">週分　　テキストNo：</div>
-          <div class="col-2"><%= f.text_field :text_no, class: 'form-control' %></div>
+          <div class="col-2"><%= f.text_field :text_no, class: 'form-control', placeholder: "N-01"  %></div>
         </div>
         
         <table class="table table-bordered">

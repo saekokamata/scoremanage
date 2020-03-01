@@ -1,7 +1,8 @@
    <!-- ↓タブメニュー -->
     <div>
       <ul class="nav nav-tabs">
-        <li class="nav-item"><a href="<%= subjects_path %>" class="nav-link <%= 'active' if current_page?(subjects_path) %>">まとめ</a></li>
+        <li class="nav-item"><a href="<%= subjects_path %>" 
+          class="nav-link <% if controller.controller_name == "subjects" && controller.action_name == 'index' %> 'active'<% end %>">まとめ</a></li>
         <li class="nav-item"><a href="<%= japanese_subjects_path %>" class="nav-link <%= 'active' if current_page?(japanese_subjects_path) %>">国語</a></li>
         <li class="nav-item"><a href="<%= math_subjects_path %>" class="nav-link <%= 'active' if current_page?(math_subjects_path) %>">算数</a></li>
         <li class="nav-item"><a href="<%= science_subjects_path %>" class="nav-link <%= 'active' if current_page?(science_subjects_path) %>">理科</a></li>

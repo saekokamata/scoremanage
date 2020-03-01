@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:show, :edit, :update]
+  before_action :correct_user, only: [:show, :edit, :update ]
   
   def index
   end
@@ -47,4 +48,10 @@ class UsersController < ApplicationController
     params.require(:user).permit(:parent_name, :email, :password, :password_confirmation, :child_name, :passing_score, :failing_score)
   end
   
+  def correct_user
+    @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to root_url
+    end
+  end
 end

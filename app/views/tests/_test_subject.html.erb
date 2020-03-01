@@ -11,8 +11,14 @@
       
       <% tests.each do |test| %>
       <tbody>
-        <tr>
-          <td><%= link_to "#{test.year_month.strftime("%y年%m月")}" + "#{test.week}週", '#URL' %></td>
+        <% if eval("test.#{subject}_score")  <= current_user.failing_score %>
+            <tr class="table-danger">
+          <% elsif eval("test." + subject + "_score") >= current_user.passing_score %>
+            <tr class="table-success">
+          <% else %>
+            <tr>
+        <% end %>
+          <td><%= link_to "#{test.year_month.strftime("%y年%m月")}" + "#{test.week}週", test %></td>
           <td><%= eval("test.#{subject}_theme") %></td>
           <td><%= eval("test.#{subject}_score") %></td>
           <td><%= eval("test.#{subject}_memo") %></td>
