@@ -22,7 +22,7 @@
           <td><%= eval("test.#{subject}_theme") %></td>
           <td><%= eval("test.#{subject}_score") %></td>
           <td><%= eval("test.#{subject}_memo") %></td>
-          <td><%= eval("test.#{subject}_review") %></td>
+          <td><% if eval("test.#{subject}_review") == true %>済 <% else %>未 <% end %></td>
         </tr>
       </tbody>
       <% end %>
