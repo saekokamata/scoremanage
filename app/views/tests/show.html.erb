@@ -15,33 +15,33 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="table-danger">
+        <tr>
           <td scope="col">国語</td>
           <td><%= @test.japanese_theme %></td>
           <td><%= @test.japanese_score %></td>
           <td><%= @test.japanese_memo %></td>
-          <td><%= @test.japanese_review %></td>
+          <td><% if @test.japanese_review == true %>済 <% else %>未 <% end %></td>
         </tr>
-        <tr class="table-success">
+        <tr>
           <td scope="col">算数</td>
           <td><%= @test.math_theme %></td>
           <td><%= @test.math_score %></td>
           <td><%= @test.math_memo %></td>
-          <td><%= @test.math_review %></td>
+          <td><% if @test.math_review == true %>済 <% else %>未 <% end %></td>
         </tr>
         <tr>
           <td scope="col">理科</td>
           <td><%= @test.science_theme %></td>
           <td><%= @test.science_score %></td>
           <td><%= @test.science_memo %></td>
-          <td><%= @test.science_review %></td>
+          <td><% if @test.science_review == true %>済 <% else %>未 <% end %></td>
         </tr>
         <tr>
           <td scope="col">社会</td>
           <td><%= @test.social_theme %></td>
           <td><%= @test.social_score %></td>
           <td><%= @test.social_memo %></td>
-          <td><%= @test.social_review %></td>
+          <td><% if @test.social_review == true %>済 <% else %>未 <% end %></td>
         </tr>
       </tbody>
     </table>
