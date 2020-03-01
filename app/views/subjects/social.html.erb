@@ -1,0 +1,12 @@
+    <div>
+      <%= current_user.child_name %>さんの成績
+    </div>
+
+  <!-- ↓タブメニュー -->
+    <%= render 'tabs' %>
+  <!-- ↑タブメニュー -->
+
+        <div id="social">
+          <%= render 'tests/test_subject',tests: @tests, subject: 'social' %>
+          <%= paginate @tests %>
+        </div>

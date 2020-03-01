@@ -1,0 +1,62 @@
+  <h1 class="h5">
+      <%= current_user.parent_name %>さんの成績
+  </h1>
+ 
+    <!-- ↓タブメニュー -->
+    <div>
+      <ul class="nav nav-tabs">
+        <li class="nav-item"><a href="#total" class="nav-link">まとめ</a></li>
+        <li class="nav-item"><a href="#japanese" class="nav-link">国語</a></li>
+        <li class="nav-item"><a href="#math" class="nav-link">算数</a></li>
+        <li class="nav-item"><a href="#science" class="nav-link">理科</a></li>
+        <li class="nav-item"><a href="#social" class="nav-link">社会</a></li>
+      </ul>
+    </div>
+    <!-- ↑タブメニュー -->
+
+    <!--div>
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a class="nav-link active" href="#">表で見る</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">グラフで見る</a></li>
+      </ul>
+    </div-->
+    
+    <div class="nav_content">
+        <div id="total">
+          <%= render 'tests/tests',tests: @tests %>
+          <%= paginate @tests %>
+        </div>
+      <% ["japanese", "math", "science", "social"].each do |subject| %>
+        <div id="<%= subject %>">
+          <%= render 'tests/test_subject',tests: @tests, subject: "#{subject}" %>
+          <%= paginate @tests %>
+        </div>
+      <% end %>
+    </div>
+    
+    <!-- テストを追加-->
+    <%= link_to '新規テスト登録', 'tests/new', class: 'btn btn-warning' %>
+    
+<script>
+  const showTab = (selector) => {
+  console.log(selector);
+  
+  $('.nav-tabs li').removeClass('active');
+  $(`.nav-tabs a[href="${selector}"]`)
+    .parent('li')
+    .addClass('active');
+  
+    $('.nav_content > div').hide();
+    $(selector).show();
+  };
+  
+  $('.nav-item a').on('click', (e) => {
+    e.preventDefault();
+  
+    const selector = $(e.target).attr('href');
+    showTab(selector);
+  });
+  
+  showTab('#total');
+</script>
+

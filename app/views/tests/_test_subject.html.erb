@@ -1,0 +1,24 @@
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">実施日</th>
+          <th scope="col">テーマ</th>
+          <th scope="col">点数</th>
+          <th scope="col">メモ</th>
+          <th scope="col">復習チェック</th>
+        </tr>
+      </thead>
+      
+      <% tests.each do |test| %>
+      <tbody>
+        <tr>
+          <td><%= link_to "#{test.year_month.strftime("%y年%m月")}" + "#{test.week}週", '#URL' %></td>
+          <td><%= eval("test.#{subject}_theme") %></td>
+          <td><%= eval("test.#{subject}_score") %></td>
+          <td><%= eval("test.#{subject}_memo") %></td>
+          <td><%= eval("test.#{subject}_review") %></td>
+        </tr>
+      </tbody>
+      <% end %>
+      
+    </table>

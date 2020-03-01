@@ -1,0 +1,26 @@
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">実施日</th>
+          <th scope="col">国語</th>
+          <th scope="col">算数</th>
+          <th scope="col">理科</th>
+          <th scope="col">社会</th>
+          <th scope="col">平均点</th>
+        </tr>
+      </thead>
+      
+      <% tests.each do |test| %>
+      <tbody>
+        <tr>
+          <td><%= "#{test.year_month.strftime("%y年%m月")}" + "#{test.week}週" %></td>
+          <td><%= test.japanese_score %></td>
+          <td><%= test.math_score %></td>
+          <td><%= test.science_score %></td>
+          <td><%= test.social_score %></td>
+          <td><%= test.inspect %></td>
+        </tr>
+      </tbody>
+      <% end %>
+      
+    </table>
